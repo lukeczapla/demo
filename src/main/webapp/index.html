@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" async defer></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="js/client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.3/RecordRTC.js"></script>
+
+</head>
+<body>
+
+When $$a \ne 0$$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+    <audio id="myAudioElement" controls>
+        <source id="mysource" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <textarea placeholder="type your text here" id="text" rows="20" cols="80"></textarea>
+    <br>
+    Input text is SSML: <input type="checkbox" id="usessml"/>
+    <select id="voice">
+        <option value=0>Male</option>
+        <option value=1>Female</option>
+        <option value=2>Neutral</option>
+    </select>
+    <select id="language">
+        <option value="en-US">English (US)</option>
+        <option value="en-AU">English (Australian)</option>
+        <option value="en-GB">English (UK)</option>
+        <option value="tr-TR">Turkish (TR)</option>
+    </select>
+    Custom Language Code: <input type="checkbox" id="usecustomlang" />
+    <input type="text" id="customlang"/>
+    <button id="submit" onclick="clickme()">Submit</button>
+    <button id="submit2" onclick="clickme2()">Submit in new window</button>
+    <p><br/>
+    <div id="eqdisplay"></div>
+    <textarea placeholder="type equation here" id="equation" oninput="clickme3()" rows="3" cols="80"></textarea>
+    <button id="submit3" onclick="clickme3()">Submit formula</button>
+    <br/>
+    <div id="editor"></div>
+</body>
+</html>
